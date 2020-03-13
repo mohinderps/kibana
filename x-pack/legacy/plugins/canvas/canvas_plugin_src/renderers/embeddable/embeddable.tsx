@@ -27,6 +27,7 @@ import { EmbeddableInput } from '../../expression_types';
 import { RendererHandlers } from '../../../types';
 import { canUserWrite, getFullscreen } from '../../../public/state/selectors/app';
 import { isWriteable } from '../../../public/state/selectors/workpad';
+import { CANVAS_EMBEDDABLE_CLASSNAME } from '../../../common/lib';
 
 const { embeddable: strings } = RendererStrings;
 
@@ -40,7 +41,7 @@ const embeddablesRegistry: {
 const renderEmbeddable = (embeddableObject: IEmbeddable, domNode: HTMLElement) => {
   return (
     <div
-      className="canvasEmbeddable"
+      className={CANVAS_EMBEDDABLE_CLASSNAME}
       style={{ width: domNode.offsetWidth, height: domNode.offsetHeight, cursor: 'auto' }}
     >
       <I18nContext>
